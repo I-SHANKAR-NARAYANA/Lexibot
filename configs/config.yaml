@@ -1,0 +1,18 @@
+model:
+  base_model: "microsoft/DialoGPT-medium"
+  max_length: 512
+  temperature: 0.7
+
+qlora:
+  r: 16
+  lora_alpha: 32
+  target_modules: ["q_proj", "v_proj"]
+  lora_dropout: 0.1
+
+chromadb:
+  collection_name: "legal_docs"
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+vertex_ai:
+  region: "us-central1"
+  bucket_name: "lexibot-models"
